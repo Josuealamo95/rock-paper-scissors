@@ -9,8 +9,12 @@
 
     <body>
         <script>
-          console.log()
+          function computerPlay() {
+            rockPaperScissors = ['Rock', 'Paper', 'Scissors']
+            return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+          };
+          console.log(computerPlay())
         </script>
     </body>
-    
+
 </html>
