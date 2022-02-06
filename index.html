@@ -10,11 +10,43 @@
     <body>
         <script>
           function computerPlay() {
-            rockPaperScissors = ['Rock', 'Paper', 'Scissors']
+            let rockPaperScissors = ['Rock', 'Paper', 'Scissors']
             return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
           };
-          console.log(computerPlay())
+          
+          function gameRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+
+            if (playerSelection === computerSelection) {
+              alert("It's a tie!"); 
+
+            //IN CASE OF SCISSORS VS PAPER
+            } else if (playerSelection == "scissors" && computerSelection == "paper") {
+              alert("You win! Scissors beats Paper!");
+            } else if (playerSelection == "paper" && computerSelection == "scissors") {
+              alert("You lose! Scissors beats Paper!");
+
+            //IN CASE OF SCISSORS VS ROCK
+            } else if (playerSelection == "scissors" && computerSelection == "rock") {
+              alert("You lose! Rock beats Scissors!")
+            } else if (playerSelection == "rock" && computerSelection == "scissors") {
+              alert("You win! Rock beats Scissors!") 
+
+            //IN CASE OF PAPER VS ROCK
+            } else if (playerSelection == "paper" && computerSelection == "rock") {
+              alert("You win! Paper beats Rock!")
+            } else if (playerSelection == "rock" && computerSelection == "paper") {
+              alert("You lose! Paper beats Rock!")
+
+            //IN CASE PlAYER ENTERS WRONG INPUT 
+            } else {
+              alert("That command is not possible. Please try again!")
+            }
+            }
+          gameRound('rock', 'Paper')
         </script>
+      
     </body>
 
 </html>
