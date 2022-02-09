@@ -9,42 +9,69 @@
 
     <body>
         <script>
-          function computerPlay() {
-            let rockPaperScissors = ['Rock', 'Paper', 'Scissors']
-            return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
-          };
-          
-          function gameRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
-            computerSelection = computerSelection.toLowerCase();
+          function game() {
+            playerScore = 0
+            computerScore = 0
 
-            if (playerSelection === computerSelection) {
-              alert("It's a tie!"); 
+            function computerPlay() {
+              let rockPaperScissors = ['rock', 'paper', 'scissors']
+              return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+            };
 
-            //IN CASE OF SCISSORS VS PAPER
-            } else if (playerSelection == "scissors" && computerSelection == "paper") {
-              alert("You win! Scissors beats Paper!");
-            } else if (playerSelection == "paper" && computerSelection == "scissors") {
-              alert("You lose! Scissors beats Paper!");
+            function gameRound(playerSelection, computerSelection) {
+              
+              playerSelection = playerSelection.toLowerCase();
 
-            //IN CASE OF SCISSORS VS ROCK
-            } else if (playerSelection == "scissors" && computerSelection == "rock") {
-              alert("You lose! Rock beats Scissors!")
-            } else if (playerSelection == "rock" && computerSelection == "scissors") {
-              alert("You win! Rock beats Scissors!") 
+              if (playerSelection === computerSelection) {
+                alert("It's a tie!"); 
+  
+              //IN CASE OF SCISSORS VS PAPER
+              } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                playerScore += 1;
+                alert("You win! Scissors beats Paper!");
+              } else if (playerSelection == "paper" && computerSelection == "scissors") {
+                computerScore += 1;
+                alert("You lose! Scissors beats Paper!");
+  
+              //IN CASE OF SCISSORS VS ROCK
+              } else if (playerSelection == "scissors" && computerSelection == "rock") {
+                computerScore += 1;
+                alert("You lose! Rock beats Scissors!")
+              } else if (playerSelection == "rock" && computerSelection == "scissors") {
+                playerScore += 1;
+                alert("You win! Rock beats Scissors!") 
+  
+              //IN CASE OF PAPER VS ROCK
+              } else if (playerSelection == "paper" && computerSelection == "rock") {
+                playerScore += 1;
+                alert("You win! Paper beats Rock!")
+              } else if (playerSelection == "rock" && computerSelection == "paper") {
+                computerScore += 1;
+                alert("You lose! Paper beats Rock!")
+  
+              //IN CASE PlAYER ENTERS WRONG INPUT 
+              } else {
+                alert("That command is not possible. Please try again!")
+              }
+              }
 
-            //IN CASE OF PAPER VS ROCK
-            } else if (playerSelection == "paper" && computerSelection == "rock") {
-              alert("You win! Paper beats Rock!")
-            } else if (playerSelection == "rock" && computerSelection == "paper") {
-              alert("You lose! Paper beats Rock!")
-
-            //IN CASE PlAYER ENTERS WRONG INPUT 
-            } else {
-              alert("That command is not possible. Please try again!")
-            }
-            }
-          gameRound('rock', 'Paper')
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
+            console.log(playerScore);
+            console.log(computerScore);
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
+            console.log(playerScore);
+            console.log(computerScore);
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
+            console.log(playerScore);
+            console.log(computerScore);
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
+            console.log(playerScore);
+            console.log(computerScore);
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
+            console.log(playerScore);
+            console.log(computerScore);
+          }
+            console.log(game())
         </script>
       
     </body>

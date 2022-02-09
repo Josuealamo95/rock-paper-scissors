@@ -1,3 +1,100 @@
 computerPlay()
   computer randomly returns "Rock", "Paper", or "Scissor"
   
+
+#function gameRound() plays a single round of r, p, s
+two parameters: playerSelection, computerSelection
+
+  playerSelection takes input from player
+
+  input from player should be case insensitive
+
+  computerSelection takes return from computerPlay()
+  
+  
+  #IN CASE OF TIE
+  
+  if playerSelection and computerSelection is the same, 
+  return a string: "It's a tie."
+  
+  
+  #IN CASE OF SCISSORS VS PAPER
+  
+  else if playerSelection is scissors and computerSelection is paper,
+  return string: "You win."
+  
+  else if it's reversed, 
+  return string: "You lose."
+  
+  
+  #IN CASE OF SCISSORS VS ROCK
+  
+  else if pSelection is scissors and cSelection is Rock,
+  return string: "You lose."
+  
+  else if it's reversed
+  alert "You win."
+  
+  
+  #IN CASE OF PAPER VS ROCK
+  
+  else if pSelection is paper and cSelection is Rock
+  alert "You win."
+  
+  else if reversed
+  alert "You lose."
+  
+  
+  #IN CASE PlAYER ENTERS WRONG INPUT 
+  
+  else 
+  alert "That command is not possible. Try again"
+  Run the function again.
+
+
+
+#FUNCTION GAME()
+
+  Use prompt() to get input from player.
+
+  playRound five times.
+
+  The computer keeps score of the game. 
+
+    If the computer wins, add one to computer score.
+
+    If player wins, add one to player score.
+
+    If it's a tie, both scores remain the same. 
+    And Repeat another round.
+
+    If player enters wrong input,
+    repeat another round.
+
+  The computer reports a winner at the end of the five rounds.
+
+
+#ALGORITHM
+  game()
+    game sets player and computer scores
+  
+    game runs game round
+
+    computerPlay()
+        returns computer play
+        
+    computerSelection = computerPlay()
+    
+    gameRound()
+      sets both scores to zero
+
+      player selection gets set to lower case
+
+      computer makes play via computerPlay()
+
+      compares player vs computer
+
+      alerts result
+
+    gameRound(playerSelection, computerSelection) x5
+    
