@@ -78,15 +78,12 @@ two parameters: playerSelection, computerSelection
   game()
     game sets player and computer scores
   
-    game runs game round
+    game runs game round(prompt, computerPlay()) x5
 
     computerPlay()
         returns computer play
-        
-    computerSelection = computerPlay()
-    
-    gameRound()
-      sets both scores to zero
+
+    gameRound(playerSelection, computerSelection)
 
       player selection gets set to lower case
 
@@ -94,7 +91,13 @@ two parameters: playerSelection, computerSelection
 
       compares player vs computer
 
-      alerts result
+      add 1 to player or computer score
 
-    gameRound(playerSelection, computerSelection) x5
+      alerts result of comparison
+
+      TO ADD: alert scores each time (personalize it)
+
+      TO EDIT: Instead of "You lose." or "You win", change to "You lose this round." or "You win this round."
+
+    
     

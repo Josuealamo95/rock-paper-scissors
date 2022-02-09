@@ -51,8 +51,12 @@
   
               //IN CASE PlAYER ENTERS WRONG INPUT 
               } else {
-                alert("That command is not possible. Please try again!")
+                alert("That command is not possible. Please try again!");
+                gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
               }
+              scores = `Computer score is: ${computerScore} \nPlayer score is: ${playerScore}`
+              alert(scores);
+              return scores
               }
 
             gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
