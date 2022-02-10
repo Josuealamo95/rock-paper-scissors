@@ -73,20 +73,23 @@ two parameters: playerSelection, computerSelection
 
       alerts result of comparison
 
-      alerts scores each round 
+      TO ADD: alerts scores each round 
 
-      TO ADD: If it's a tie, repeat another round.
-
+      If it's a tie, repeat another round.
+  
       If player enters wrong input,
-      TO ADD: repeat another round.
+      repeat another round.
 
-      TO EDIT: Instead of "You lose." or "You win", change to "You lose this round." or "You win this round."
+  Instead of "You lose." or "You win", change to "You lose this round." or "You win this round.
 
-      TO ADD(optional): Program tells user round number (Round X of X)
+  TO ADD(optional): Program tells user round number (Round X of X
 
-      TO ADD: If player's score is higher than computer score,
-      alert("You won the game!")
-      
-      TO ADD: If computer's score is higher than player's
-      alert("You lose the game!")
-    
+  If player's score is higher than computer score,
+  alert("You won the game!")
+  
+  If computer's score is higher than player's
+  alert("You lose the game!")
+
+TO SOLVE: Sometimes the program alerts the scores
+more than once! Debug! (NOTE: It happens when 
+there's a tie or wrong input)
