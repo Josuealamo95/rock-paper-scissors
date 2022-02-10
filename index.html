@@ -22,9 +22,11 @@
               
               playerSelection = playerSelection.toLowerCase();
 
+              //IN CASE OF A TIE
               if (playerSelection === computerSelection) {
                 alert("It's a tie!"); 
-  
+                gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
+                
               //IN CASE OF SCISSORS VS PAPER
               } else if (playerSelection == "scissors" && computerSelection == "paper") {
                 playerScore += 1;

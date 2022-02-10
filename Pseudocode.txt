@@ -52,28 +52,6 @@ two parameters: playerSelection, computerSelection
   Run the function again.
 
 
-
-#FUNCTION GAME()
-
-  Use prompt() to get input from player.
-
-  playRound five times.
-
-  The computer keeps score of the game. 
-
-    If the computer wins, add one to computer score.
-
-    If player wins, add one to player score.
-
-    If it's a tie, both scores remain the same. 
-    And Repeat another round.
-
-    If player enters wrong input,
-    repeat another round.
-
-  The computer reports a winner at the end of the five rounds.
-
-
 #ALGORITHM
   game()
     game sets player and computer scores
@@ -95,9 +73,20 @@ two parameters: playerSelection, computerSelection
 
       alerts result of comparison
 
-      TO ADD: alert scores each time (personalize it)
+      alerts scores each round 
+
+      TO ADD: If it's a tie, repeat another round.
+
+      If player enters wrong input,
+      TO ADD: repeat another round.
 
       TO EDIT: Instead of "You lose." or "You win", change to "You lose this round." or "You win this round."
 
-    
+      TO ADD(optional): Program tells user round number (Round X of X)
+
+      TO ADD: If player's score is higher than computer score,
+      alert("You won the game!")
+      
+      TO ADD: If computer's score is higher than player's
+      alert("You lose the game!")
     
