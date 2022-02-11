@@ -84,12 +84,10 @@ two parameters: playerSelection, computerSelection
 
   TO ADD(optional): Program tells user round number (Round X of X
 
+  TO ADD: If the player makes a wrong input, repeat a game round.
+
   If player's score is higher than computer score,
   alert("You won the game!")
   
   If computer's score is higher than player's
   alert("You lose the game!")
-
-TO SOLVE: Sometimes the program alerts the scores
-more than once! Debug! (NOTE: It happens when 
-there's a tie or wrong input)

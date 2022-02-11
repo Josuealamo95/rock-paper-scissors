@@ -16,7 +16,7 @@
             function computerPlay() {
               let rockPaperScissors = ['rock', 'paper', 'scissors']
               return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
-            };
+            }
 
             function gameRound(playerSelection, computerSelection) {
               
@@ -53,39 +53,41 @@
               //IN CASE PlAYER ENTERS WRONG INPUT 
               } else {
                 alert("That command is not possible. Please try again!");
+                gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
               }
-              scores = `Computer score is: ${computerScore} \nPlayer score is: ${playerScore}`
-              alert(scores);
-              return scores
+            }
+            function getScores() {
+              score = `Computer score is: ${computerScore} \nPlayer score is: ${playerScore}`
+              alert(score);
+              return score
+            }
+
+            function getGameResults() {
+              if (playerScore > computerScore) {
+                alert("You won the game!")
               }
-
-            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
-            console.log(playerScore);
-            console.log(computerScore);
-            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
-            console.log(playerScore);
-            console.log(computerScore);
-            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
-            console.log(playerScore);
-            console.log(computerScore);
-            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
-            console.log(playerScore);
-            console.log(computerScore);
-            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay())
-            console.log(playerScore);
-            console.log(computerScore);
-
-            if (playerScore > computerScore) {
-              alert("You won the game!")
+              else if (computerScore > playerScore) {
+                alert("You lost the game!")
+              }
+              else {
+                gameRound(prompt("Enter rock, paper or scissors: "), computerPlay()) 
+              }
             }
-            else if (computerScore > playerScore) {
-              alert("You lost the game!")
-            }
-            else {
-              gameRound(prompt("Enter rock, paper or scissors: "), computerPlay()) 
-            }
+            //After each round, show scores to player
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
+            getScores();
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
+            getScores();
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
+            getScores();
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
+            getScores();
+            gameRound(prompt("Enter rock, paper or scissors: "), computerPlay());
+            getScores();
+            //Tells player wether he won or lost
+            getGameResults();
           }
-          console.log(game())
+          game()
         </script>
       
     </body>
