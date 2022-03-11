@@ -1,93 +1,33 @@
-computerPlay()
-  computer randomly returns "Rock", "Paper", or "Scissor"
-  
 
-#function gameRound() plays a single round of r, p, s
-two parameters: playerSelection, computerSelection
-
-  playerSelection takes input from player
-
-  input from player should be case insensitive
-
-  computerSelection takes return from computerPlay()
-  
-  
-  #IN CASE OF TIE
-  
-  if playerSelection and computerSelection is the same, 
-  return a string: "It's a tie."
-  
-  
-  #IN CASE OF SCISSORS VS PAPER
-  
-  else if playerSelection is scissors and computerSelection is paper,
-  return string: "You win."
-  
-  else if it's reversed, 
-  return string: "You lose."
-  
-  
-  #IN CASE OF SCISSORS VS ROCK
-  
-  else if pSelection is scissors and cSelection is Rock,
-  return string: "You lose."
-  
-  else if it's reversed
-  alert "You win."
-  
-  
-  #IN CASE OF PAPER VS ROCK
-  
-  else if pSelection is paper and cSelection is Rock
-  alert "You win."
-  
-  else if reversed
-  alert "You lose."
-  
-  
-  #IN CASE PlAYER ENTERS WRONG INPUT 
-  
-  else 
-  alert "That command is not possible. Try again"
-  Run the function again.
+TO DO:
+-Add div that displays results 
+-Add div that displays running score
+-Add div that displays instructions of the game
 
 
-#ALGORITHM
-  game()
-    game sets player and computer scores
-  
-    game runs game round(prompt, computerPlay()) x5
+Game(Algorithm):
+    -Scores are set to zero when the game starts 
 
-    computerPlay()
-        returns computer play
+    -Loop until someone reaches five points. 
+        -Player clicks button
+        -On click, gameRound runs.
+        -Computer makes its move.
+        -Player's and computer's move gets compared.
+        -Alert winner of round.
+        -Alert current scores. 
+    -Alert game winner.
 
-    gameRound(playerSelection, computerSelection)
+FUNCTIONS NEEDED:
+-function that gets player's move and stores into variable(playerSelection)
+    -this function depends on what button is clicked
+-function that gets computer's move and stores it into variable(computerPlay)
+-function that compares both moves(gameRound)
+-function that loops everything until a player reaches five points(game)
 
-      player selection gets set to lower case
 
-      computer makes play via computerPlay()
+-Function that alerts winner of the game after player or computer reach five
+points. 
 
-      compares player vs computer
+-Function that resets scores to 0 if player or computer reach five points.
 
-      add 1 to player or computer score
 
-      alerts result of comparison
-
-      TO ADD: alerts scores each round 
-
-      If it's a tie, repeat another round.
-  
-      If player enters wrong input,
-      repeat another round.
-
-  Instead of "You lose." or "You win", change to "You lose this round." or "You win this round.
-
-  TO ADD(optional): Program tells user round number (Round X of X
-
-  TO ADD: If the player makes a wrong input, repeat a game round.
-
-  If player's score is higher than computer score,
-  alert("You won the game!")
-  
-  If computer's score is higher than player's
-  alert("You lose the game!")
