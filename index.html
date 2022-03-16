@@ -9,21 +9,24 @@
 
     <body>
       <div id = 'container'></div>
-
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+        <button>rock</button>
+        <button>paper</button>
+        <button>scissors</button>
 
         <script>
         playerScore = 0
         computerScore = 0
         
-        gameBtn = document.querySelectorAll('button')
+        gameBtn = document.querySelectorAll('button');
 
-        content = document.querySelector('#container')
-          scoreDisplay = document.createElement('div');
-          scoreDisplay.textContent = 'Player score is: ' + playerScore;
-          content.append(scoreDisplay);
+        content = document.querySelector('#container');
+          playerScoreDisplay = document.createElement('div');
+          playerScoreDisplay.textContent = 'Player score is: ' + playerScore;
+          content.append(playerScoreDisplay);
+
+          computerScoreDisplay = document.createElement('div');
+          computerScoreDisplay.textContent = 'Computer score is: ' + computerScore;
+          content.append(computerScoreDisplay);
 
         function computerPlay() {
           let rockPaperScissors = ['rock', 'paper', 'scissors']
@@ -32,7 +35,6 @@
         }
 
         function gameRound() {
-          playerSelection = playerSelection.toLowerCase();
 
           //IN CASE OF A TIE
           if (playerSelection === computerSelection) {
@@ -42,66 +44,75 @@
           } else if (playerSelection == "scissors" && computerSelection == "paper") {
             playerScore += 1;
             alert("You win this round! Scissors beats Paper!");
+            playerScoreDisplay.textContent = "Player score is: " + playerScore;
+            return playerScore
 
           } else if (playerSelection == "paper" && computerSelection == "scissors") {
             computerScore += 1;
             alert("You lose this round! Scissors beats Paper!");
+            playerScoreDisplay.textContent = "Player score is: " + playerScore;
+            return computerScore
 
           //IN CASE OF SCISSORS VS ROCK
           } else if (playerSelection == "scissors" && computerSelection == "rock") {
             computerScore += 1;
-            alert("You lose this round! Rock beats Scissors!")
+            alert("You lose this round! Rock beats Scissors!");
+            computerScoreDisplay.textContent = 'Computer score is: ' + computerScore;
+            return computerScore
 
           } else if (playerSelection == "rock" && computerSelection == "scissors") {
             playerScore += 1;
-            alert("You win this round! Rock beats Scissors!") 
+            alert("You win this round! Rock beats Scissors!"); 
+            playerScoreDisplay.textContent = "Player score is: " + playerScore;
+            return playerScore
 
           //IN CASE OF PAPER VS ROCK
           } else if (playerSelection == "paper" && computerSelection == "rock") {
             playerScore += 1;
-            alert("You win this round! Paper beats Rock!")
-            
+            alert("You win this round! Paper beats Rock!");
+            playerScoreDisplay.textContent = "Player score is: " + playerScore;
+            return playerScore
+
           } else if (playerSelection == "rock" && computerSelection == "paper") {
             computerScore += 1;
-            alert("You lose this round! Paper beats Rock!")
+            alert("You lose this round! Paper beats Rock!");
+            computerScoreDisplay.textContent = 'Computer score is: ' + computerScore;
+            return computerScore
           } 
+        }
+
+        function checkGameState() {
+          if (playerScore == 5 || computerScore == 5) {
+            setTimeout(gameOver, 500);
+          }
         }
 
         function gameOver() {
           if(playerScore == 5) {
-            playerWins = "You beat the computer!"
+            playerWins = "You beat the computer!";
             alert(playerWins);
             playerScore = 0;
             computerScore = 0;
+            playerScoreDisplay.textContent = "Player score is: " + playerScore;
+            computerScoreDisplay.textContent = 'Computer score is: ' + computerScore;
             return playerWins
           } else if(computerScore == 5) {
-            playerLoses = "Game over. The computer wins!"
+            playerLoses = "Game over. The computer wins!";
             alert(playerLoses);
             playerScore = 0;
             computerScore = 0;
+            playerScoreDisplay.textContent = "Player score is: " + playerScore;
+            computerScoreDisplay.textContent = 'Computer score is: ' + computerScore;
             return playerLoses
           }
         }
 
         gameBtn.forEach(button => button.addEventListener('click', ()=> {
-          playerSelection = button.textContent
-          return playerSelection
+          playerSelection = button.textContent;
+          computerPlay();
+          gameRound();
+          checkGameState();
         }));
-
-        gameBtn.forEach(button => button.addEventListener('click', computerPlay));
-        
-        gameBtn.forEach(button => button.addEventListener('click', gameRound));
-
-        gameBtn.forEach(button => button.addEventListener('click', ()=> {
-            scoreDisplay.textContent = "Player score is: " + playerScore
-            return scoreDisplay.textContent
-          }))
-
-        gameBtn.forEach(button => button.addEventListener('click', gameOver));
-
-        if (gameOver) {
-          scoreDisplay.textContent = "Player score is: " + playerScore
-        }
         </script>
       
     </body>
