@@ -108,10 +108,12 @@
         }
 
         gameBtn.forEach(button => button.addEventListener('click', ()=> {
+          button.disabled = true;
           playerSelection = button.textContent;
           computerPlay();
           gameRound();
           checkGameState();
+          button.disabled = false;
         }));
         </script>
       
